@@ -32,32 +32,52 @@ document.getElementById('btn').addEventListener('click',function(){
 })
 onValue(data,function(snapshot){
   let values = Object.values(snapshot.val())
+  let keys = Object.keys(snapshot.val())
+  let setdata = Object.entries(snapshot.val())
+  console.log(setdata);
   add.innerHTML =" "
-  console.log(Object.keys(snapshot.val()))
   for (let i=0 ; i <values.length; i++){
-    appendListElement(values[i])
+    let itemsarray = setdata[i]
+    let datakey = itemsarray[0]
+    let datavalue = itemsarray[1]
+    appendListElement(datavalue,datakey)
   }  
 })
 
-function appendItems(values){
-  add.innerHTML += `<li>${values}</li>`;
+
+function appendListElement(values,keys){
+  let newEl = document.createElement("li")
+  newEl.textContent =values
+  add.append(newEl)
+  newEl.addEventListener('click',function(){
+    document.getElementById('alert').style.display = 'inline'
+    document.getElementById('remove-alert-h').innerHTML =`Remove "${values}" from cart?` 
+    document.getElementById('remove-items').addEventListener('click',function(){
+      removeItemsBykey(keys)
+      location.reload();
+    })
+    
+  })
+}
+function removeItemsBykey(keys){
+  remove(ref(database,`data/${keys}`))
+
 
 }
+
 document.getElementById('removeBtn').addEventListener('click', function(){
   remove(data).then(() => {
     location.reload();
   });
 })
 
+function appendItems(values){
+  add.innerHTML += `<li>${values}</li>`;
 
-function appendListElement(values){
-  let newEl = document.createElement("li")
-  newEl.textContent =values
-  add.append(newEl)
-  newEl.addEventListener('dblclick',function(){
-    alert('double clicked')
-  })
 }
+document.getElementById('close').addEventListener('click',function(){{
+  document.getElementById('alert').style.display = 'none'
+}})
 //push(data, "hello")
 
 
