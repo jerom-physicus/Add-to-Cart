@@ -18,8 +18,14 @@ const data = ref(database,"data")
 const add = document.getElementById('add')
 document.getElementById('btn').addEventListener('click',function(){
   const items = document.getElementById('item').value
-  push(data,items)
-  item.value =""
+  if (items == ''|| items==' '|| items == '  '){
+    alert("can't add null item")
+  }
+  else{
+    push(data,items)
+    item.value =""
+  }
+ 
  
   
   //onValue(data,function(snapshot){
@@ -34,7 +40,6 @@ onValue(data,function(snapshot){
   let values = Object.values(snapshot.val())
   let keys = Object.keys(snapshot.val())
   let setdata = Object.entries(snapshot.val())
-  console.log(setdata);
   add.innerHTML =" "
   for (let i=0 ; i <values.length; i++){
     let itemsarray = setdata[i]
@@ -50,11 +55,13 @@ function appendListElement(values,keys){
   newEl.textContent =values
   add.append(newEl)
   newEl.addEventListener('click',function(){
-    document.getElementById('alert').style.display = 'inline'
+    document.getElementById('alert').style.display = 'block'
     document.getElementById('remove-alert-h').innerHTML =`Remove "${values}" from cart?` 
     document.getElementById('remove-items').addEventListener('click',function(){
       removeItemsBykey(keys)
-      location.reload();
+      document.getElementById('alert').style.display = 'none'
+
+      //location.reload();
     })
     
   })
@@ -66,9 +73,10 @@ function removeItemsBykey(keys){
 }
 
 document.getElementById('removeBtn').addEventListener('click', function(){
-  remove(data).then(() => {
-    location.reload();
-  });
+  document.getElementById('alert2').style.display = 'inline'
+  //remove(data).then(() => {
+    //location.reload();
+  //});
 })
 
 function appendItems(values){
@@ -77,7 +85,18 @@ function appendItems(values){
 }
 document.getElementById('close').addEventListener('click',function(){{
   document.getElementById('alert').style.display = 'none'
+  document.getElementById('alert2').style.display = 'none'
 }})
+
+document.getElementById('close2').addEventListener('click',function(){{
+  document.getElementById('alert2').style.display = 'none'
+}})
+
+document.getElementById('remove-all-items').addEventListener('click',function(){
+  remove(data).then(() => {
+    location.reload();
+  });
+})
 //push(data, "hello")
 
 
