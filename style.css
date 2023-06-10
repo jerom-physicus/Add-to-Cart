@@ -134,6 +134,22 @@ li{
    
    
 }
+.remove-h2{
+    position: relative;
+    margin-top: -10px;
+    margin-left: -10px;
+    
+}
+.alert2{
+    display: none;
+    margin-top: 20px;
+    background-color: white;
+    height: 140px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 43px 1px rgba(0, 0, 0, 0.3);
+}
 .click{
     text-align: center;
     font-size: 12px;
