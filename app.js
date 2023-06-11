@@ -11,10 +11,23 @@ const firebaseConfig = {
           measurementId: "G-91GW9MGT8X"
         };
       
-        // Initialize Firebase
+        
+        //getting data from local storage
+
+const localdata = localStorage.getItem('user_name') 
+const username =localdata.replace('@gmail.com','') 
+const localdata_cart = localStorage.getItem('cart_name')
+document.getElementById('carthead').innerHTML = localdata_cart;  
+
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 var database = getDatabase(app);
-const data = ref(database,"data")
+const data = ref(database,username)
+
+
+
+
+
 const add = document.getElementById('add')
 document.getElementById('btn').addEventListener('click',function(){
   const items = document.getElementById('item').value

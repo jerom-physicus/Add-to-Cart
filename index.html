@@ -2,45 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>Add to Cart</title>
+    <title>Add to cart</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1 class="h1">Add to Cart</h1>
-    <div class="alert"  id="alert">
-        <img class="close" src="close.png" id="close">
-        <h4 id="remove-alert-h" class="remove-h" ></h4>
-        
-        <button class="alert-remove-btn" id="remove-items">Remove</button>
-    </div>
+    <h1 class="head">Add to cart</h1>
 
-    <div class="container">
-        <img src="cart.jpg" class="cart">
-        <input type="text" placeholder="Items" class="item " id="item">
-        <button class="btn" id="btn">Add to cart</button>
+    <div id="login-page" class="login-page">
+        <h2 class="login-h">Login</h2>
+        <input type="text" class="input-email" id="login-email" placeholder="email">
+        <input type="text" class="input-name" id="cart-name"  placeholder="Cart name">
+        <input type="password" class="input-password" id="login-password" placeholder="password">
+        <button class="login-btn" id="login">Login</button>
+        <h4 class="no-account">Don't have an account?</h4>
+        <button class="register-btn" id="register-btn">Register</button>
     </div>
-    <div class="items" >
-        <h2 class="cart-h">Cart items</h2>
-        
-        <ul id="add" >    
-        </ul>
-        <div class="alert2" id="alert2">
-            <img class="close2" src="close.png" id="close2">
-            <h4 class="remove-h2" >Sure to remove all the items?</h4>
-            
-            <button class="alert-remove-btn" id="remove-all-items">Remove</button>
+    <div class="register" id="register-page">
+        <div class="register-page">
+            <h2 class="login-h">Register</h2>
+            <input type="text" class="input-email" id="reg-email" placeholder="email">
+            <input type="text" class="input-name" id="cart-name" placeholder="Cart name">
+            <input type="password" class="input-password" id="reg-password" placeholder="password">
+            <button class="login-btn" id="create-user">SignIn</button>
+            <h4 class="no-account">Already have an account?</h4>
+            <button class="register-btn" id="already-login">Login</button>
         </div>
-        <h3 class="click ">*Click on the item to remove the item</h3>
-        <button class="remove-btn" id="removeBtn">Remove all items</button>
     </div>
-
-    <script src="app.js" type="module"></script>
     
+
+    <script src="index.js" type="module"></script>
 </body>
 </html>
