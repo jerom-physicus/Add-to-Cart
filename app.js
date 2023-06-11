@@ -71,7 +71,7 @@ function appendListElement(values,keys){
     document.getElementById('alert').style.display = 'block'
     document.getElementById('remove-alert-h').innerHTML =`Remove "${values}" from cart?` 
     document.getElementById('remove-items').addEventListener('click',function(){
-      removeItemsBykey(keys)
+      removeItemsBykey(keys,username)
       document.getElementById('alert').style.display = 'none'
 
       //location.reload();
@@ -79,8 +79,9 @@ function appendListElement(values,keys){
     
   })
 }
-function removeItemsBykey(keys){
-  remove(ref(database,`data/${keys}`))
+function removeItemsBykey(keys,username){
+  console.log(keys)
+  remove(ref(database,username+`/${keys}`))
 
 
 }
@@ -92,10 +93,7 @@ document.getElementById('removeBtn').addEventListener('click', function(){
   //});
 })
 
-function appendItems(values){
-  add.innerHTML += `<li>${values}</li>`;
 
-}
 document.getElementById('close').addEventListener('click',function(){{
   document.getElementById('alert').style.display = 'none'
   document.getElementById('alert2').style.display = 'none'
