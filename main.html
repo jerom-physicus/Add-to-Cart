@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>Add to Cart</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Add me to Cart</title>
+  </head>
+  <body>
     <h1 class="h1">Add to Cart</h1>
-    <div class="alert"  id="alert">
-        <img class="close" src="close.png" id="close">
-        <h4 id="remove-alert-h" class="remove-h" ></h4>
-        
-        <button class="alert-remove-btn" id="remove-items">Remove</button>
+    <div class="alert" id="alert">
+      <img class="close" src="close.png" id="close" />
+      <h4 id="remove-alert-h" class="remove-h"></h4>
+
+      <button class="alert-remove-btn" id="remove-items">Remove</button>
     </div>
 
     <div class="container">
-        <img src="cart.jpg" class="cart">
-        <input type="text" placeholder="Items" class="item " id="item">
-        <button class="btn" id="btn">Add to cart</button>
+      <img src="cart.jpg" class="cart" />
+      <input type="text" placeholder="Items" class="item" id="item" />
+      <button class="btn" id="btn">Add to cart</button>
     </div>
-    <div class="items" >
-        <h2 class="cart-h" id="carthead"></h2>
-        
-        <ul id="add" >    
-        </ul>
-        <div class="alert2" id="alert2">
-            <img class="close2" src="close.png" id="close2">
-            <h4 class="remove-h2" >Sure to remove all the items?</h4>
-            
-            <button class="alert-remove-btn" id="remove-all-items">Remove</button>
-        </div>
-        <h3 class="click ">*Click on the item to remove the item</h3>
-        <button class="remove-btn" id="removeBtn">Remove all items</button>
+    <div class="items">
+      <h2 class="cart-h" id="carthead"></h2>
+
+      <ul id="add"></ul>
+      <div class="alert2" id="alert2">
+        <img class="close2" src="close.png" id="close2" />
+        <h4 class="remove-h2">Sure to remove all the items?</h4>
+
+        <button class="alert-remove-btn" id="remove-all-items">Remove</button>
+      </div>
+      <h3 class="click">*Click on the item to remove the item</h3>
+      <button class="remove-btn" id="removeBtn">Remove all items</button>
     </div>
 
     <script src="app.js" type="module"></script>
-    
-</body>
+  </body>
 </html>
